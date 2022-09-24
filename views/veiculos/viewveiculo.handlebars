@@ -1,0 +1,51 @@
+<h1>Todos os Usuários</h1>
+
+
+
+<ul class="user_list list-group">
+  {{#each veiculos}}
+
+    <li class="list-group-item">
+      <div class="col-md-2">
+        <label for="">{{this.nome}}</label>
+      </div>
+      <div class="col-md-1">
+        <label for="">{{this.modelo}}</label>
+      </div>
+      <div class="col-md-1">
+        <label for="">{{this.motor}}</label>
+      </div>
+      <div class="col-md-1">
+        <label for="">{{this.ano}}</label>
+      </div>
+      <div class="col-md-1">
+        <label for="">{{this.fabricante}}</label>
+      </div>
+      <div class="col-md-1">
+        <label for="">{{this.valor}}</label>
+      </div>
+      <div class="col-md-1">
+        <label for="">{{this.cor}}</label>
+      </div>
+      <div class="col-md-2">
+        <label for="">{{this.opcional}}</label>
+      </div>
+      <div class="col-md-4 actions">
+        <a href="/veiculos/edit/{{this.id}}">
+          {{> edit_veiculo}}
+        </a>
+        <form action="/veiculos/remove" method="post">
+          <input type="hidden" name="id" value="{{this.id}}">
+          <button type="submit">
+            {{> del_veiculo}}
+          </button>
+        </form>
+      </div>
+    </li>
+
+  {{/each}}
+</ul>
+
+
+
+</div>

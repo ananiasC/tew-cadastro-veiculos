@@ -2,9 +2,9 @@ const express = require('express')
 const app = express()
 const port = 3000
 const exphbs = require('express-handlebars')
-const User = require('./routes/userRouter')
+const Veiculo = require('./routes/veiculoRouter')
 const conn = require('./db/conn')
-const userModel = require('./model/User')
+const veiculoModel = require('./model/Veiculo')
 
 
 
@@ -31,8 +31,8 @@ app.use(express.static('public'))
 
 
 
-//adicionando rota User
-app.use('/users', User)
+//adicionando rota Veiculo
+app.use('/veiculos', Veiculo)
 
 
 
